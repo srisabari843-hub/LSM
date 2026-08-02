@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 
 def register_view(request):
     if request.method=="POST":
@@ -38,4 +38,13 @@ def login_view(request):
            login(request,user)
            return redirect("/")
        messages.error(request,"Invalid username or Passwords")
-    return render(request,"accouts/login.html")
+    return render(request,"accounts/login.html")
+
+
+def logout_view(request):
+    logout(request)
+    return redirect("/")
+
+@login_required
+def profile_view(request):
+    return render(request,"accounts/profile.html")

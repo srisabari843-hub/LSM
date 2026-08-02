@@ -8,7 +8,14 @@
         <li><a href="#">Courses</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Register</a></li>
+
+      
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'accounts:profile' %}">Profile</li>
+        <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'accounts:login' %}">Login</a></li>
+        <li><a href="{% url 'accounts:register' %}">Register</a></li>
+        {% endif %}
         </ul>
 </nav>

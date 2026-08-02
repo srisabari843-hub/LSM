@@ -16,6 +16,11 @@ class Profile(models.Model):
              max_length=20,
              choices=ROLE_CHOICES
          )
+    
+    image=models.ImageField(
+         upload_to="profiles/",
+         default="profiles/default.png"
+    )
 
         
     def __str__(self):

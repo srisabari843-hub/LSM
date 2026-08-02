@@ -1,0 +1,10 @@
+.profile-card{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin-left:15px;
+
+}
+h2{
+    margin:10px auto 20px 15px;
+}
