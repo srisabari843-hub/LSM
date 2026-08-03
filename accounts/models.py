@@ -22,6 +22,8 @@ class Profile(models.Model):
          default="profiles/default.png"
     )
 
+    phone=models.CharField(max_length=15,blank=True)
+
         
     def __str__(self):
          return self.user.username

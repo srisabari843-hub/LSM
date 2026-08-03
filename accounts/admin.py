@@ -9,4 +9,6 @@ class ProfileAdmin(admin.ModelAdmin):
         "id",
         "user",
         "role",
+        "phone",
+        "image"
     )
