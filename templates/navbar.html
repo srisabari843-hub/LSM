@@ -5,10 +5,15 @@
 
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="#">Courses</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-
+       {% if user.is_authenticated %}
+       {% if user.profile.role == "Student" %}
+          <li><a href="{% url 'accounts:student_dashboard' %}">Dashbord</a></li>
+        {% else %}
+           <li><a href="{% url 'accounts:instructor_dashboard' %}">Dashbord</a></li>
+         {% endif %}
+         {% endif %}
+        <li><a href="{% url 'accounts:about' %}">About</a></li>
+        <li><a href="{% url 'accounts:contact' %}">Contact</a></li>
       
         {% if user.is_authenticated %}
         <li><a href="{% url 'accounts:profile' %}">Profile</li>

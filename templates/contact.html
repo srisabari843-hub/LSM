@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="contact-page">
+    <h1>Contact US</h1>
+    <p>Have Question or need help? Feel to 
+        Contact our Suppport Team.</p>
+    <form method="POST">
+        {% csrf_token %}
+         <div>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Enter your name">
+         </div>
+        <div>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="ente ryour Email">
+        </div>
+         <div>
+        <label>Message</label>
+        <textarea name="message"
+        placeholder="write your message">
+    </textarea>
+</div>
+    <button type="submit">
+        Send Message
+    </button>
+    </form>
+</div>
+{% endblock %}

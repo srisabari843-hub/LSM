@@ -1,0 +1,16 @@
+
+.about-page{
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+     font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+
+h2{
+    margin-top:35px;
+}
+ul{
+    margin-left:25px;
+}

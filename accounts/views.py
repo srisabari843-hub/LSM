@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Profile
+from .models import Profile,Query
 def register_view(request):
     if request.method=="POST":
         username=request.POST["username"]
@@ -39,11 +39,12 @@ def login_view(request):
            username=username,
            password=password
        )
-       profile=user.profile
+      
 
        if user is not None:
            login(request,user)
-           if profile.role=="Student":
+           profile=user.profile
+           if profile.role == "Student":
                return redirect("accounts:student_dashboard")
            else:
                return redirect("Accounts:instructor_dashboard")
@@ -79,3 +80,19 @@ def student_dashboard(request):
 @login_required
 def instructor_dashboard(request):
     return render(request,"instructor/dashboard.html")
+
+
+def about(request):
+    return render(request,"about.html")
+
+
+
+@login_required
+def contact(request):
+    if request.method == "POST":
+        Query.objects.create(
+            user=request.user,
+            message= request.POST["message"]
+        )
+        return redirect("home")
+    return render(request,"contact.html")

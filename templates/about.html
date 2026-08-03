@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{%  block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content  %}
+<div class="about-page">
+    <h1>About Us</h1>
+    <p>
+        Welcome to our Learning Portal.
+        We provide quality Educations.
+        Students learn new Skills,acess course, 
+        and improve Their Knowledge anytime 
+        and anywhere..
+    </p>
+
+    <p>
+        Our goal is to provide a simple and effective learning
+         environment where students can explore 
+         courses, watch lessons,track their Progress, 
+         and achieve their academic goals.
+    </p>
+
+    <h2>What we Provide</h2>
+    <ul>
+        <li>Online Courses</li>
+        <li>Video Lessons</li>
+        <li>Student Progress Tracking</li>
+        <li>Easy access to Educational Resources</li>
+        <li>Instructor and Student Instructor</li>
+    <ul>
+</div>
+
+{% endblock %}

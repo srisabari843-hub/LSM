@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile
+from .models import Profile,Query
 # Register your models here.
 
 
@@ -11,4 +11,12 @@ class ProfileAdmin(admin.ModelAdmin):
         "role",
         "phone",
         "image"
+    )
+
+@admin.register(Query)
+class QueryAdmin(admin.ModelAdmin):
+    list_display=(
+        "id",
+        "user",
+        "message"
     )

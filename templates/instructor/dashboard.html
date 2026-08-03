@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %} 
+
+<div class="dashboard">
+    {% include "sidebar.html" %}
+    <div class="content">
+        <h1>Welcome, {{request.user.first_name|default:request.user.username }}</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>0</h2>
+                 <p>Total Courses</p>
+            </div>
+            <div class="card">
+                <h2>0</h2>
+                 <p>Total Students</p>
+            </div>
+            <div class="card">
+                <h2>0</h2>
+                 <p>Total Lessons</p>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+    {% endblock %}

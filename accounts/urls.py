@@ -14,4 +14,6 @@ urlpatterns=[
     path("instructor/dashborad/",
          views.instructor_dashboard,
          name="instructor_dashboard",),
+     path("about/",views.about,name="about"),
+     path("contact/",views.contact,name="contact")
 ]
