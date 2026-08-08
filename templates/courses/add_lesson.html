@@ -1,9 +1,17 @@
 {% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css  %}
+<link rel="stylesheet" href="{%  static 'css/addlesson.css' %}">
+{% endblock %}
+
 
 {% block content %}
+
 <p>Course: {{course.title}}</p>
 <form method="POST" enctype="multipart/form-data">
-    {% scrf_token %}
+    {% csrf_token %}
 
     <label>Subtitle</label>
     <input 

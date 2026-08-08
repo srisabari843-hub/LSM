@@ -60,6 +60,6 @@ def add_lesson(request,course_id):
         )
     return render(
         request,
-        "course/add_lesson.html",
+        "courses/add_lesson.html",
         {"course":course}
     )

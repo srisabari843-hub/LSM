@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 
 from django.views.generic import TemplateView
 
+
+
 def home(request):
     return HttpResponse("welcome to LMS Project")
 urlpatterns = [

@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Profile,Query
+from courses.models import Course
+
 def register_view(request):
     if request.method=="POST":
         username=request.POST["username"]
@@ -96,3 +98,13 @@ def contact(request):
         )
         return redirect("home")
     return render(request,"contact.html")
+
+
+def instructor_courses(request):
+    courses=Course.objects.filter(instructor =request.user)
+
+    return render(
+        request,
+        "instructor/courses.html",
+        {"courses":courses}
+    )

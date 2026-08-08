@@ -1,0 +1,20 @@
+*{
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.course-container{
+    margin:30px auto;
+    box-sizing: border-box;
+    width:80%;
+   
+}
+
+h1,p,h2{
+    margin-top:30px;
+}
+
+a{
+    display:inline-block;
+    margin-top:20px;
+}

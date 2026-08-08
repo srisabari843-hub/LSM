@@ -1,12 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href = "{% static 'css/subtitle.css' %}">
+{% endblock  %}
 
 <div class="course-container">
    <h1>{{ course.title}}</h1>
    <p>{{course.description}}</p>
+   {%  if request.user == course.instructor %}
+<a href="{% url 'courses:add_lesson' course.id %}">
+   ➕ Add Lesson
+</a>
+   {% endif %}
    <h2>Course Lesson</h1>
 
-   {% for lesson in course,lesson,all %}
+   {% for lesson in course.lesson.all %}
     
    <div class="lesson-card">
     <h3>{{forloop.counter}}. {{lesson.subtitle}}</h3>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/subtitle.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="course-container">
+<h1>My Courses</h1>
+
+{% for course in courses %}
+<div class="course-card">
+    <h2>
+        <a href="{% url 'courses:course_detail' course.id %}">
+        {{ course.title}}
+    </a>
+    <p>{{course.description}}</p>
+</div>
+
+{% empty %}
+<p>You have not created any courses yet</p>
+</div>
+{% endfor %}
+{% endblock %}
