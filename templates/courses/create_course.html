@@ -1,20 +1,33 @@
 {% extends "base.html" %}
+{% load static %}
+{% block content %}
 
-{% block contnet %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/newcourse.css' %}">
+{% endblock %}
+
+<div class="create-course-container">
 <h2>Create Course</h2>
 <form method="POST">
     {% csrf_token %}
     <label>Corse Name</label>
 
+
     <input
      type="text"
      name="name"
      required>
+     <br><br>
 
+
+     <label>Description</label>
+     <textarea name="description"
+     required></textarea>
      <br><br>
      <button type="submit">
         Create Course
      </button>
-
-
     </form>
+</div>
+
+    {% endblock %}

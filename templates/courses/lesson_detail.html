@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ lesson.subtitle}}</h1>
+<p>{{lesson.description}}</p>
+
+<video controls width ="800">
+    <source src="{{lesson.video.url}}" type="video/mp4">
+    Your browser does not support video playback.
+</video>
+
+
+{% endblock %}

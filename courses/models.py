@@ -13,6 +13,25 @@ class Course(models.Model):
 
     created_at = models.DateTimeField(auto_now_add = True)
 
+
     def __str__(self):
         return self.title
 
+
+
+class Lesson(models.Model):
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE,
+        related_name ="lessons"
+    )
+
+    subtitle=models.CharField(max_length=300)
+    description = models.TextField(blank=True)
+    video = models.FileField(
+        upload_to = "videos/"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.subtitle

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="course-container">
+   <h1>{{ course.title}}</h1>
+   <p>{{course.description}}</p>
+   <h2>Course Lesson</h1>
+
+   {% for lesson in course,lesson,all %}
+    
+   <div class="lesson-card">
+    <h3>{{forloop.counter}}. {{lesson.subtitle}}</h3>
+    <p> {{lesson.description}}</p>
+    <a href="{% url 'courses:lesson_detail' lesson.id %}">
+      ▶ Watch
+    </a>
+   </div>
+
+   {% empty %}
+   <p>No Lessoon Available yet.</p>
+   {% endfor %}
+
+</div>
+
+{% endblock  %}

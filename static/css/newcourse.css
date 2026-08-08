@@ -1,0 +1,21 @@
+
+.create-course-container{
+    padding:30px;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.create-course-container input,textarea,button{
+    border-radius:20px;
+    border:none;
+    height:25px;
+    margin-left:10px;
+    text-align:center;
+}
+
+button{
+    background-color:rgb(98, 223, 98);
+    width:100px;
+    height:30px;
+}
