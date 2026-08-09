@@ -1,0 +1,26 @@
+.vid{
+    box-sizing: border-box;
+    width:1200px;
+    height:100%;
+    padding:25px;  
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1,p,iframe {
+    margin-top:18px;
+    display:block;
+}
+
+.npbtn{
+    display:flex;
+    gap:600px;
+}
+
+.npbtn a{
+  background-color:  rgb(67, 67, 236);
+  height:30px;
+  width:150px;
+  text-decoration: none;
+  border-radius:8px;
+  text-align:center;
+}

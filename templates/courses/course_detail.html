@@ -12,15 +12,17 @@
 <a href="{% url 'courses:add_lesson' course.id %}">
    ➕ Add Lesson
 </a>
+
+    
    {% endif %}
    <h2>Course Lesson</h1>
 
-   {% for lesson in course.lesson.all %}
+   {% for lesson in course.lessons.all %}
     
    <div class="lesson-card">
     <h3>{{forloop.counter}}. {{lesson.subtitle}}</h3>
     <p> {{lesson.description}}</p>
-    <a href="{% url 'courses:lesson_detail' lesson.id %}">
+    <a href="{% url 'courses:lesson_detail' course.id lesson.id %}">
       ▶ Watch
     </a>
    </div>

@@ -32,9 +32,7 @@ class Lesson(models.Model):
 
     subtitle=models.CharField(max_length=300)
     description = models.TextField(blank=True)
-    video = models.FileField(
-        upload_to = "videos/"
-    )
+    video = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

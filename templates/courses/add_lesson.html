@@ -9,8 +9,10 @@
 
 {% block content %}
 
+<form method = "POST">
 <p>Course: {{course.title}}</p>
 <form method="POST" enctype="multipart/form-data">
+
     {% csrf_token %}
 
     <label>Subtitle</label>
@@ -25,13 +27,14 @@
         name="description">
 </textarea>
 
+
 <label>Video</label>
 <input 
- type="file"
- name="video"
- accept="video/*"
+ type="url"
+ name="video_url"
  required
 >
+
 
 <button type="submit">
     Add lesson

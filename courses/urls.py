@@ -14,11 +14,14 @@ urlpatterns = [
          views.course_detail,
         name="course_detail"
     ),
+
     path(
-        "<int:lesson_id>",
+        "<int:course_id>/lesson/<int:lesson_id>/",
         views.lesson_detail,
         name="lesson_detail"
     ),
+
+
      path("<int:course_id>/add-lesson/",
              views.add_lesson,
              name="add_lesson"),

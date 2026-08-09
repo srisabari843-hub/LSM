@@ -1,13 +1,42 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/lesson_detail.css' %}">
+{% endblock %}
+
+
 {% block content %}
+<div class="vid">
 <h1>{{ lesson.subtitle}}</h1>
 <p>{{lesson.description}}</p>
 
-<video controls width ="800">
-    <source src="{{lesson.video.url}}" type="video/mp4">
-    Your browser does not support video playback.
-</video>
 
+
+<iframe
+width="800"
+height="450"
+src="{{ lesson.video }}"
+title="{{ lesson.subtitle}}"
+referrerpolicy = "strict-origin-when-cross-origin"
+frameborder="0">
+</iframe>
+</div>
+
+
+<div class="npbtn">
+    {% if previous_lesson %}
+    
+      <a href="{% url 'courses:lesson_detail' course.id previous_lesson.id %}">←Previous</a>
+    
+    {% endif %}
+    {% if next_lesson %}
+    
+     <a href="{% url 'courses:lesson_detail' course.id next_lesson.id %}">Next→</a>
+    
+    {% endif %}
+</div>
+   
 
 {% endblock %}
