@@ -83,3 +83,20 @@
     }
 
 }
+
+.course-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.course-card{
+    padding:20px;
+    border:1 ppx solid black;
+    background-color:#f1dddd;
+    border-radius:8px;
+}
+
+.one1{
+    margin:30px auto 25px auto;
+}

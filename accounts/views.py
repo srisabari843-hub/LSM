@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Profile,Query
-from courses.models import Course
+from courses.models import Course,Lesson
 
 def register_view(request):
     if request.method=="POST":
@@ -40,7 +40,7 @@ def login_view(request):
            request,
            username=username,
            password=password
-       )
+       )    
       
 
        if user is not None:
@@ -49,7 +49,7 @@ def login_view(request):
            if profile.role == "Student":
                return redirect("accounts:student_dashboard")
            else:
-               return redirect("Accounts:instructor_dashboard")
+               return redirect("accounts:instructor_dashboard")
            
        messages.error(request,"Invalid username or Passwords")
     return render(request,"accounts/login.html")
@@ -77,11 +77,34 @@ def profile_view(request):
 
 @login_required
 def student_dashboard(request):
-    return render(request,"student/dashboard.html")
+    # total_courses = Course.objects.count()
+    # total_lessons = Lesson.objects.count()
+    # total_students = Profile.objects.filter(role = "Student").count()
+
+    courses = Course.objects.all()
+
+    return render(
+        request,
+        "student/dashboard.html",
+        {
+      "courses":courses
+    }
+    )
 
 @login_required
 def instructor_dashboard(request):
-    return render(request,"instructor/dashboard.html")
+    courses = Course.objects.filter(instructor = request.user)
+
+    total_courses = courses.count()
+    total_lessons = Lesson.objects.filter(course__in = courses).count()
+    total_students =Profile.objects.filter(role = "Student").count()
+
+    return render(request,"instructor/dashboard.html",
+                  {
+                      "total_courses":total_courses,
+                      "total_lessons":total_lessons,
+                      "total_students":total_students,
+                  })
 
 
 def about(request):
@@ -101,8 +124,8 @@ def contact(request):
 
 
 def instructor_courses(request):
+       
     courses=Course.objects.filter(instructor =request.user)
-
     return render(
         request,
         "instructor/courses.html",

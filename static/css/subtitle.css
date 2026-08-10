@@ -25,3 +25,11 @@ a{
 h2{
     margin-bottom:5px;
 }
+
+.enroll{
+    background-color:rgb(31, 123, 228);
+    border-radius: 8px;
+    border:1px solid black;
+    text-decoration: none;
+    margin-left:14px;
+}

@@ -1,0 +1,24 @@
+
+<h2>MY Courses</h2>
+
+<div class="course-container">
+
+    {% for enroll in enrollments %}
+    
+    <div class="course-card">
+        <h3>{{enrollment.course.title}}</h3>
+        <p>{{enrollment.course.description}}</p>
+        <p>
+            Instructor:
+            {{enrollment.course.instructor.username}}
+        </p>
+        <a href="{% url 'courses:course_detail' enrollment.course.id  %}">
+        Continue Courses
+    </a>
+</div>
+
+{% empty %}
+<p>You have not enrolled any course</p>
+{% endfor %}
+
+</div>

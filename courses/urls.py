@@ -16,13 +16,30 @@ urlpatterns = [
     ),
 
     path(
+        "<int:course_id>/enroll/",
+        views.course_detail,
+        name="course_detail"
+    ),
+
+    path(
         "<int:course_id>/lesson/<int:lesson_id>/",
         views.lesson_detail,
         name="lesson_detail"
     ),
-
+  
 
      path("<int:course_id>/add-lesson/",
              views.add_lesson,
              name="add_lesson"),
+
+    path(
+        "<int:course_id>/enroll/",
+        views.enroll_course,
+        name = "enroll_course"
+    ),
+    path(
+        "my-courses",
+        views.my_courses,
+        name="my_courses"
+    ),
 ]

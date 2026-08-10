@@ -37,3 +37,21 @@ class Lesson(models.Model):
 
     def __str__(self):
         return self.subtitle
+
+class Enrollment(models.Model):
+    student = models.ForeignKey(
+        User,
+        on_delete =models.CASCADE,
+        related_name = "Enrollment"
+    )
+
+    course = models.ForeignKey(
+        Course,
+        on_delete = models.CASCADE,
+        related_name = "enrollment"
+    )
+
+    enrollment_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.student.username}" - {self.course.title}

@@ -12,11 +12,11 @@
         <h1>Welcoem, {{request.user.first_name | default:request.user.username}}</h1>
         <div class="cards">
             <div class="card">
-                <h2>0</h2>
+                <h2>{{total_courses}}</h2>
                 <p>Enrolled Courses</p>
             </div>
             <div class="card">
-                <h2>0</h2>
+                <h2></h2>
                 <p>Completed</p>
             </div>
             <div class="card">
@@ -25,7 +25,24 @@
             </div>
 
         </div>
+
+
+
+      <h2 class="one1">Available Courses</h2>
+    <div class="course-container">
+        {% for course in courses %}
+         <div class="course-card">
+            <h3>{{course.title}}</h3>
+            <p>{{course.description}}</p>
+            <a href= "{% url 'courses:course_detail' course_id=course.id %}">
+                View Course
+            </a>
+         </div>
+         {% empty %}
+         <p>No Course Available.</p>
+         {% endfor %}
+
+        </div>
     </div>
 
-</div>
 {% endblock %}

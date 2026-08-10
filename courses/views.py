@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import Course,Lesson
-
+from .models import Course,Lesson,Enrollment
+    
 
 def create_course(request):
     if request.method == "POST":
@@ -40,6 +40,7 @@ def lesson_detail(request,course_id,lesson_id):
         id=lesson_id,
         course = course
     )
+
 
     lessons = list(course.lessons.all().order_by("id"))
      
@@ -105,4 +106,27 @@ def add_lesson(request,course_id):
         request,
         "courses/add_lesson.html",
         {"course":course}
+    )
+
+
+def enroll_course(request,course_id):
+    course = get_object_or_404(Course,id = course_id)
+
+    Enrollment.objects.get_or_(
+        student = request.user,
+        course = course  
+    )
+
+    return redirect("courses:my_courses")
+
+
+def my_courses(request):
+    enrollments = Enrollment.objects.filter(
+        student = request.user
+    )
+
+    return render(
+       request,
+       "courses/my_courses.html",
+       {"enrollments":enrollments}
     )

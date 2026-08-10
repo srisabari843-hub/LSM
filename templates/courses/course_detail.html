@@ -14,7 +14,7 @@
 </a>
 
     
-   {% endif %}
+   {% endif %}     
    <h2>Course Lesson</h1>
 
    {% for lesson in course.lessons.all %}
@@ -24,6 +24,9 @@
     <p> {{lesson.description}}</p>
     <a href="{% url 'courses:lesson_detail' course.id lesson.id %}">
       ▶ Watch
+    </a>
+    <a href = "{% url 'courses:enroll_course' course.id %}" class="enroll">
+      Enroll Now
     </a>
    </div>
 
