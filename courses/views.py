@@ -55,12 +55,13 @@ def course_detail(request,course_id):
         request,
         "courses/course_detail.html",
         {
+            "user":request.user,
             "course":course,
             "enrolled":enrolled,
             "completed_count":completed_count,
             "total_lessons":total_lessons,
             "course_status":course_status,
-            "lessons":lessons
+            "lessons":lessons,
         }
     )
 

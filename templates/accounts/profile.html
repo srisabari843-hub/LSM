@@ -3,15 +3,14 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static  'css/profile.css' %}">
 {% endblock %}
-
+   
 {% block content %}
 
-
+    
 <div class="profile-container">
     <h2>My Profile</h2>
 
-
-
+     
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
          <label for="image-input" class="profile-image">
@@ -24,7 +23,7 @@
          hidden
          onchange="this.form.submit()"
          >
-    </form>
+    </form>    
 
 
 
@@ -33,8 +32,6 @@
         <p><Strong>Role :</strong> {{profile.role}}</p>
         <p><strong>Username :</strong> {{ request.user.username }}</p>
          <p><strong>Email :</strong> {{ request.user.email }}</p>
-         <p><strong>First Name :</strong> {{ request.user.first_name }}</p>
-          <p><strong>Last Name :</strong> {{ request.user.last_name}}</p>
            <p><strong>Date Joined :</strong> {{ request.user.date_joined }}</p>
          <p><strong>Last Login :</strong> {{ request.user.last_login }}</p>
     </div>

@@ -4,7 +4,7 @@
 {% block extra_css %}
 <link rel="stylesheet" href = "{% static 'css/subtitle.css' %}">
 {% endblock  %}
-
+ 
 <div class="course-container">
    <h1>{{ course.title}} </h1>
    {% if enrolled %}
@@ -16,9 +16,13 @@
      Continue Course
     </a>
     {% else %}
+   
+    {% if user.profile.role == "Student" %}
     <a href="{% url 'courses:enroll_course' course.id %}" class="enroll">
      Enroll Now
     </a>
+    {% endif %}
+
     {% endif %}
    {%  if request.user == course.instructor %}
 <a href="{% url 'courses:add_lesson' course.id %}">
@@ -34,7 +38,7 @@
 
    <div class="lesson-card">
     <h3>{{forloop.counter}}. {{lesson.subtitle}}</h3>
-
+     {% if user.role == 'Student' %}
     {% if lesson.student_progress and lesson.student_progress.completed %}
       <span class="sys">✓ Completed</span>
 
@@ -42,9 +46,10 @@
       <span class="sys1">○ Not completed</span>
 
       {% endif %}
+      {% endif %}
     <p> {{lesson.description}}</p>
 
-    <a href="{% url 'courses:lesson_detail' course.id lesson.id %}">
+    <a href="{% url 'courses:lesson_detail' course.id lesson.id  %}" class="bor">
       ▶ Watch
     </a>
    

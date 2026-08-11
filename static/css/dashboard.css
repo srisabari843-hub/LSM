@@ -99,4 +99,18 @@
 
 .one1{
     margin:30px auto 25px auto;
+}     
+
+.bor{
+    background-color: rgb(230, 224, 224);
+    padding:10px;
+    border-radius: 7px;
+}
+
+.course-card a{
+    padding:1px;
+    background-color: rgb(104, 104, 206);
+    border-radius:5px;
+    text-decoration: none;
+    border:1px solid black;
 }

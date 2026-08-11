@@ -3,17 +3,15 @@
 
     <h2>LMS</h2>
     {% if request.user.profile.role == "Student" %}
-     <a href="{% url 'accounts:student_dashboard' %}">🏠 Dashboard</a>
-     <a href="{% url 'courses:my_courses'%}">📚 My Courses</a>
-     <a href="#">📝 Assignments</a>
-     <a href="{% url 'accounts:profile' %}">👤 Profile</a>
-     <a href="{% url 'accounts:logout' %}">🚪 Logout</a>
+     <a href="{% url 'accounts:student_dashboard' %}" class="bor">🏠 Dashboard</a>
+     <a href="{% url 'courses:my_courses'%}" class="bor">📚 My Courses</a>
+     <a href="{% url 'accounts:profile' %}" class="bor">👤 Profile</a>
+     <a href="{% url 'accounts:logout' %}" class="bor">🚪 Logout</a>
      {% else %}
-     <a href="{% url 'accounts:instructor_dashboard' %}">🏠 Dashboard</a>
-     <a href="{% url 'accounts:instructor_courses' %}">📚 Courses</a>
-     <a href="{% url 'courses:create_course' %}">➕  Add Course</a>
-     <a href="#">👨‍🎓Student</a>
-     <a href="{% url 'accounts:profile' %}">👤 Profile</a>
-     <a href="{% url 'accounts:logout' %}">Logout</a>
+     <a href="{% url 'accounts:instructor_dashboard' %}" class="bor">🏠 Dashboard</a>
+     <a href="{% url 'accounts:instructor_courses' %}" class="bor">📚 Courses</a>
+     <a href="{% url 'courses:create_course' %}" class="bor">➕  Add Course</a>
+     <a href="{% url 'accounts:profile' %}" class="bor">👤 Profile</a>
+     <a href="{% url 'accounts:logout' %}" class="bor">Logout</a>
      {% endif %}
 </div>    
