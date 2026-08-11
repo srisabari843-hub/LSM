@@ -12,16 +12,21 @@
         <h1>Welcoem, {{request.user.first_name | default:request.user.username}}</h1>
         <div class="cards">
             <div class="card">
-                <h2>{{total_courses}}</h2>
+                <h2>{{total_course}}</h2>
                 <p>Enrolled Courses</p>
             </div>
             <div class="card">
-                <h2></h2>
+                <h2>{{completed_courses}}</h2>
                 <p>Completed</p>
             </div>
             <div class="card">
-                <h2>0</h2>
+                <h2>{{pending_courses}}</h2>
                 <p>Pending</p>
+            </div>
+
+            <div class="card">
+                <h2>{{ongoing_courses}}</h2>
+                <p>Ongoing</p>
             </div>
 
         </div>

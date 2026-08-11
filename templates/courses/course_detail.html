@@ -6,29 +6,50 @@
 {% endblock  %}
 
 <div class="course-container">
-   <h1>{{ course.title}}</h1>
+   <h1>{{ course.title}} </h1>
+   {% if enrolled %}
+   <p class="sts">{{course_status}}</p>
+   {% endif %}
    <p>{{course.description}}</p>
+   {%  if enrolled %}
+      <a href = "{% url 'courses:course_detail' course.id %}" class="enroll">
+     Continue Course
+    </a>
+    {% else %}
+    <a href="{% url 'courses:enroll_course' course.id %}" class="enroll">
+     Enroll Now
+    </a>
+    {% endif %}
    {%  if request.user == course.instructor %}
 <a href="{% url 'courses:add_lesson' course.id %}">
    ➕ Add Lesson
 </a>
 
-    
+     
+
    {% endif %}     
    <h2>Course Lesson</h1>
 
-   {% for lesson in course.lessons.all %}
-    
+   {% for lesson in lessons %}
+
    <div class="lesson-card">
     <h3>{{forloop.counter}}. {{lesson.subtitle}}</h3>
+
+    {% if lesson.student_progress and lesson.student_progress.completed %}
+      <span class="sys">✓ Completed</span>
+
+     {% else %}
+      <span class="sys1">○ Not completed</span>
+
+      {% endif %}
     <p> {{lesson.description}}</p>
+
     <a href="{% url 'courses:lesson_detail' course.id lesson.id %}">
       ▶ Watch
     </a>
-    <a href = "{% url 'courses:enroll_course' course.id %}" class="enroll">
-      Enroll Now
-    </a>
+   
    </div>
+  
 
    {% empty %}
    <p>No Lessoon Available yet.</p>

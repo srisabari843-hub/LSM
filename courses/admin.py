@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course,Lesson
+from .models import Course,Lesson,LessonProgress
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
@@ -21,4 +21,13 @@ class LessonAdmin(admin.ModelAdmin):
         "subtitle",
         "description",
         "created_at",
+    ]
+
+
+@admin.register(LessonProgress)
+class LessonProgressAdmin(admin.ModelAdmin):
+    list_display=[
+        "student",
+        "lesson",
+        "completed"
     ]

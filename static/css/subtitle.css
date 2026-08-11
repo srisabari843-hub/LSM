@@ -32,4 +32,20 @@ h2{
     border:1px solid black;
     text-decoration: none;
     margin-left:14px;
+    padding:8px;
+}
+
+.sts{
+    padding:8px;
+    border-radius:6px;
+    background-color:rgb(34, 222, 247);
+    width:100px;
+}
+
+.sys{
+    color:rgb(40, 245, 40);
+}
+
+.sys1{
+    color:red;
 }

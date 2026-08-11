@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Profile,Query
-from courses.models import Course,Lesson
+from courses.models import Course,Lesson,LessonProgress
 
 def register_view(request):
     if request.method=="POST":
@@ -77,17 +77,47 @@ def profile_view(request):
 
 @login_required
 def student_dashboard(request):
-    # total_courses = Course.objects.count()
-    # total_lessons = Lesson.objects.count()
-    # total_students = Profile.objects.filter(role = "Student").count()
+
+    total_course=0
+    completed_courses = 0
+    ongoing_courses =0
+    pending_courses =0
 
     courses = Course.objects.all()
+     
+    user=request.user
+    enrollments = user.Enrollment.all()
+    total_course=enrollments.count()
+    for enrollment in enrollments:
+        course = enrollment.course
+        total_lessons = course.lessons.count()
+
+        completed_lessons = LessonProgress.objects.filter(
+        student = request.user,
+        completed =True,
+        lesson__course = course,
+        ).count()
+
+        if total_lessons > 0 and completed_lessons == total_lessons:
+            completed_courses+=1
+        elif completed_lessons > 0:
+            ongoing_courses+=1
+        else:
+            pending_courses+=1
+        
+
+
+
 
     return render(
         request,
         "student/dashboard.html",
         {
-      "courses":courses
+            "courses":courses,
+         "completed_courses":completed_courses,
+         "ongoing_courses":ongoing_courses,
+         "pending_courses" : pending_courses,
+         "total_course" : total_course
     }
     )
 

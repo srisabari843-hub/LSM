@@ -4,7 +4,7 @@
     <h2>LMS</h2>
     {% if request.user.profile.role == "Student" %}
      <a href="{% url 'accounts:student_dashboard' %}">🏠 Dashboard</a>
-     <a href="#">📚 My Courses</a>
+     <a href="{% url 'courses:my_courses'%}">📚 My Courses</a>
      <a href="#">📝 Assignments</a>
      <a href="{% url 'accounts:profile' %}">👤 Profile</a>
      <a href="{% url 'accounts:logout' %}">🚪 Logout</a>
@@ -16,4 +16,4 @@
      <a href="{% url 'accounts:profile' %}">👤 Profile</a>
      <a href="{% url 'accounts:logout' %}">Logout</a>
      {% endif %}
-</div>
+</div>    

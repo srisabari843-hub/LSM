@@ -15,11 +15,7 @@ urlpatterns = [
         name="course_detail"
     ),
 
-    path(
-        "<int:course_id>/enroll/",
-        views.course_detail,
-        name="course_detail"
-    ),
+  
 
     path(
         "<int:course_id>/lesson/<int:lesson_id>/",

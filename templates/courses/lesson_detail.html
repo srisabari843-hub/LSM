@@ -11,6 +11,15 @@
 {% block content %}
 <div class="vid">
 <h1>{{ lesson.subtitle}}</h1>
+{% if progress.completed %}
+<p>✅ Completed</p>
+{% else %}
+<p>⏳ Not Completed</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Mark as Completed</button>
+</form>
+{% endif %}
 <p>{{lesson.description}}</p>
 
 
@@ -38,6 +47,7 @@ frameborder="0">
     
     {% endif %}
 </div>
-   
+
+
 
 {% endblock %}

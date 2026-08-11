@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import Course,Lesson,Enrollment
+from .models import Course,Lesson,Enrollment,LessonProgress
+
     
 
 def create_course(request):
@@ -21,12 +22,45 @@ def create_course(request):
 
 def course_detail(request,course_id):
     course = get_object_or_404(Course,id = course_id)
+    
+    enrolled = Enrollment.objects.filter(
+        student=request.user,
+        course = course
+    ).exists()
 
-    return render(
+    lessons=course.lessons.all()
+
+    completed_count = LessonProgress.objects.filter(
+        student = request.user,
+        lesson__course = course,
+        completed =True
+    ).count()
+
+    total_lessons = lessons.count()
+
+    if completed_count ==0:
+        course_status = "Pending"
+    elif completed_count == total_lessons:
+        course_status = "Completed"
+    else:
+        course_status = "Ongoing"
+
+    for lesson in lessons:
+        lesson.student_progress = LessonProgress.objects.filter(
+            student = request.user,
+            lesson =lesson
+        ).first()
+        
+    return render(     
         request,
         "courses/course_detail.html",
         {
-            "course":course
+            "course":course,
+            "enrolled":enrolled,
+            "completed_count":completed_count,
+            "total_lessons":total_lessons,
+            "course_status":course_status,
+            "lessons":lessons
         }
     )
 
@@ -41,6 +75,16 @@ def lesson_detail(request,course_id,lesson_id):
         course = course
     )
 
+
+    progress,created = LessonProgress.objects.get_or_create(
+        student=request.user,
+        lesson = lesson
+    )
+    
+
+    if request.method == "POST":
+       progress.completed = True
+       progress.save()
 
     lessons = list(course.lessons.all().order_by("id"))
      
@@ -66,6 +110,7 @@ def lesson_detail(request,course_id,lesson_id):
                     "lesson" : lesson,
                     "previous_lesson":previous_lesson,
                     "next_lesson":next_lesson,
+                    "progress":progress
                   })
 
 
@@ -112,7 +157,7 @@ def add_lesson(request,course_id):
 def enroll_course(request,course_id):
     course = get_object_or_404(Course,id = course_id)
 
-    Enrollment.objects.get_or_(
+    Enrollment.objects.get_or_create(
         student = request.user,
         course = course  
     )

@@ -1,4 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
 
+{% block extra_css %}
+<link rel ="stylesheet" href= "{% static 'css/my_courses.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="one">
 <h2>MY Courses</h2>
 
 <div class="course-container">
@@ -6,13 +14,13 @@
     {% for enroll in enrollments %}
     
     <div class="course-card">
-        <h3>{{enrollment.course.title}}</h3>
-        <p>{{enrollment.course.description}}</p>
+        <h3>{{enroll.course.title}}</h3>
+        <p>{{enroll.course.description}}</p>
         <p>
             Instructor:
-            {{enrollment.course.instructor.username}}
+            {{enroll.course.instructor.username}}
         </p>
-        <a href="{% url 'courses:course_detail' enrollment.course.id  %}">
+        <a href="{% url 'courses:course_detail' enroll.course.id  %}">
         Continue Courses
     </a>
 </div>
@@ -22,3 +30,5 @@
 {% endfor %}
 
 </div>
+</div>
+{% endblock %}
