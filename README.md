@@ -11,27 +11,22 @@ Features
 - Track lesson completion and courses Progress
 - View Enrolled Courses from the dashboard
 ## Instructor
-    Instructor
-      - Instructor dashboard
-      - create and manage courses
-      - Add lessons to course
-      - Add youTube video lessons
-      - View Course and lesson statistics
+- Instructor dashboard
+- create and manage courses
+- Add lessons to course
+- Add youTube video lessons
+- View Course and lesson statistics
 
   ## Authentication
- 
-    Authentication
-      - User registration and login
-      - Role-Based access for Student and Instructors
-      - Protected pages for -authenticated users
+  - User registration and login
+  - Role-Based access for Student and Instructors
+  - Protected pages for -authenticated users
       
   ## Technology Used
-
-    Technologiew Used
-      - Backend:Python,Django
-      - Frontend:HTML,CSS
-      - Database:PostgreSQL
-      - Video:Youtube Embedded Videous
+  - Backend:Python,Django
+  - Frontend:HTML,CSS
+  - Database:PostgreSQL
+  - Video:Youtube Embedded Videous
     
 
 Project Structure
@@ -76,22 +71,20 @@ Project Structure
 ## Main Components
 Main Components
   ## Accounts
-    Accounts
-    the accounts application handles:
-        - User registration
-        - User login and logout
-        - User profile
-        - Student and Instructor roles
-        - ROle-Based acess
+the accounts application handles:
+  - User registration
+  - User login and logout
+  - User profile
+  - Student and Instructor roles
+  - ROle-Based acess
   ## Courses
-    Courses
-    the courses application handles
-        - Course creation
-        - Course details
-        - Lesson creation
-        - youtube video lessons
-        - Course enrollment
-        - Lesson progress
+the courses application handles
+  - Course creation
+  - Course details
+  - Lesson creation
+  - youtube video lessons
+  - Course enrollment
+  - Lesson progress
 
 
     Database
@@ -189,13 +182,11 @@ Learning Progress
 
   Thiis allow students to understand which course they have completed and which Courses are still in Progress.
 ## Security
-  Security
-  The project uses Django built-in authentication and security features,
-    -CSRF protection
-    -Password hashing
-    -Authentication-required pages
-    -Role-based acess control
-    -Protected instructor for sensitive production configuration
+  -CSRF protection
+  -Password hashing
+  -Authentication-required pages
+  -Role-based acess control
+  -Protected instructor for sensitive production configuration
 ## Future Improvements
 Future Improvements
     possible feature imrovements include:
