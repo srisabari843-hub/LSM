@@ -3,14 +3,13 @@ Learning Management System(LMS)
 
 Features
 ## Student
-    Student
-      - User registration and login
-      - Browser available Courses
-      - View course detail and lessons
-      - enroll in COurses
-      - Watch Video-based lessons
-      - Track lesson completion and courses Progress
-      - View Enrolled Courses from the dashboard
+- User registration and login
+- Browser available Courses
+- View course detail and lessons
+- enroll in COurses
+- Watch Video-based lessons
+- Track lesson completion and courses Progress
+- View Enrolled Courses from the dashboard
 ## Instructor
     Instructor
       - Instructor dashboard
