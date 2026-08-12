@@ -25,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY","django-development-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("RENDER") is None
+DEBUG = True
+# os.environ.get("RENDER") is None
 
 if os.environ.get("RENDER"):
     ALLOWED_HOSTS = [os.environ.get("RENDER_EXTERNAL_HOSTNAME")]
