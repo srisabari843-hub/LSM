@@ -4,35 +4,35 @@ Learning Management System(LMS)
 Features
 ## Student
     Student
-      -User registration and login
-      -Browser available Courses
-      -View course detail and lessons
-      -enroll in COurses
-      -Watch Video-based lessons
-      -Track lesson completion and courses Progress
-      -View Enrolled Courses from the dashboard
+      - User registration and login
+      - Browser available Courses
+      - View course detail and lessons
+      - enroll in COurses
+      - Watch Video-based lessons
+      - Track lesson completion and courses Progress
+      - View Enrolled Courses from the dashboard
 ## Instructor
     Instructor
-      -Instructor dashboard
-      -create and manage courses
-      -Add lessons to course
-      -Add youTube video lessons
-      -View Course and lesson statistics
+      - Instructor dashboard
+      - create and manage courses
+      - Add lessons to course
+      - Add youTube video lessons
+      - View Course and lesson statistics
 
   ## Authentication
  
     Authentication
-      -User registration and login
-      -Role-Based access for Student and Instructors
-      -Protected pages for -authenticated users
+      - User registration and login
+      - Role-Based access for Student and Instructors
+      - Protected pages for -authenticated users
       
   ## Technology Used
 
     Technologiew Used
-      -Backend:Python,Django
-      -Frontend:HTML,CSS
-      -Database:PostgreSQL
-      -Video:Youtube Embedded Videous
+      - Backend:Python,Django
+      - Frontend:HTML,CSS
+      - Database:PostgreSQL
+      - Video:Youtube Embedded Videous
     
 
 Project Structure
@@ -74,25 +74,25 @@ Project Structure
   |------templates/
 ```
 
-
+## Main Components
 Main Components
   ## Accounts
     Accounts
     the accounts application handles:
-        -User registration
-        -User login and logout
-        -User profile
-        -Student and Instructor roles
-        -ROle-Based acess
+        - User registration
+        - User login and logout
+        - User profile
+        - Student and Instructor roles
+        - ROle-Based acess
   ## Courses
     Courses
     the courses application handles
-        -Course creation
-        -Course details
-        -Lesson creation
-        -youtube video lessons
-        -Course enrollment
-        -Lesson progress
+        - Course creation
+        - Course details
+        - Lesson creation
+        - youtube video lessons
+        - Course enrollment
+        - Lesson progress
 
 
     Database
@@ -109,7 +109,7 @@ Main Components
 
 
     
-
+## Installation 
 Installation 7 Setup
 
   1 CLone the repository
@@ -132,6 +132,7 @@ Installation 7 Setup
   open:http://127.0.0.1:8000/
   in your browser
 
+## DeploymentE
 Deployment
   the project is deployed on Render with PostgreSQL.
   The Render build command is:
@@ -142,9 +143,9 @@ Deployment
 
   Live Demo:<https://learning-management-system-orp3.onrender.com>
 
-      
+  ## How LMS works  
 How LMS works
-
+## Student Flow
   Student flow
     Register
       |
@@ -164,7 +165,7 @@ How LMS works
       |
     Track Progress
 
-
+## Instructor Flow
     Instructor Flow
       |
     Login
@@ -181,7 +182,7 @@ How LMS works
       |
     view Course Information
 
-
+  ## Learning Progress
 Learning Progress
   The LMS keeps track of student
 
@@ -207,7 +208,7 @@ Future Improvements
       -Email notification
       -improves progress visualization
       More detailed analytics for instructors
-
+## Screenshots
 Screenshots
   Screenshots of the application can be added here to show the main pages.
 
@@ -229,7 +230,7 @@ Screenshots
  profile page
    ![Home](screenshot/profile.png)
 
-
+## Author
   Author
     Developed as a learning project to build practical experience with python,Django,database,authentication, and web application development.
 
