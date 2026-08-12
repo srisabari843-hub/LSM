@@ -2,6 +2,7 @@ Learning Management System(LMS)
    A web-based Learning Management System builts with django that allows students to enroll in courses, learn through video lessons, and track their learning progress.Instructor can create courses and lessons and monitor course-related information through their dashboard.
 
 Features
+## Student
     Student
       -User registration and login
       -Browser available Courses
@@ -10,7 +11,7 @@ Features
       -Watch Video-based lessons
       -Track lesson completion and courses Progress
       -View Enrolled Courses from the dashboard
-
+## Instructor
     Instructor
       -Instructor dashboard
       -create and manage courses
@@ -18,10 +19,15 @@ Features
       -Add youTube video lessons
       -View Course and lesson statistics
 
+  ## Authentication
+ 
     Authentication
       -User registration and login
       -Role-Based access for Student and Instructors
       -Protected pages for -authenticated users
+      
+  ## Technology Used
+
     Technologiew Used
       -Backend:Python,Django
       -Frontend:HTML,CSS
@@ -30,7 +36,7 @@ Features
     
 
 Project Structure
-
+```text
   LMS_PROJECT/
   |
   |
@@ -66,11 +72,11 @@ Project Structure
   |-----git.gitignore
   |-----static/
   |------templates/
-  
+```
 
 
 Main Components
-
+  ## Accounts
     Accounts
     the accounts application handles:
         -User registration
@@ -78,7 +84,7 @@ Main Components
         -User profile
         -Student and Instructor roles
         -ROle-Based acess
-
+  ## Courses
     Courses
     the courses application handles
         -Course creation
@@ -182,7 +188,7 @@ Learning Progress
   Student can see their progress through their dashboard and course pages.
 
   Thiis allow students to understand which course they have completed and which Courses are still in Progress.
-
+## Security
   Security
   The project uses Django built-in authentication and security features,
     -CSRF protection
@@ -190,7 +196,7 @@ Learning Progress
     -Authentication-required pages
     -Role-based acess control
     -Protected instructor for sensitive production configuration
-
+## Future Improvements
 Future Improvements
     possible feature imrovements include:
       -Course search and filtering
