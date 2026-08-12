@@ -174,30 +174,32 @@ How LMS works
       |
     view Course Information
 
-  ## Learning Progress
+## Learning Progress
 Learning Progress
   The LMS keeps track of student
 
   Student can see their progress through their dashboard and course pages.
 
   Thiis allow students to understand which course they have completed and which Courses are still in Progress.
+
 ## Security
-  -CSRF protection
-  -Password hashing
-  -Authentication-required pages
-  -Role-based acess control
-  -Protected instructor for sensitive production configuration
+  - CSRF protection
+  - Password hashing
+  - Authentication-required pages
+  - Role-based acess control
+  - Protected instructor for sensitive production configuration
+  
+  
 ## Future Improvements
-Future Improvements
-    possible feature imrovements include:
-      -Course search and filtering
-      -Course categories
-      -Student reviews and ratings
-      -Instructor profile pages
-      -Course certificates
-      -Email notification
-      -improves progress visualization
-      More detailed analytics for instructors
+possible feature imrovements include:
+  - Course search and filtering
+  - Course categories
+  - Student reviews and ratings
+  - Instructor profile pages
+  - Course certificates
+  - Email notification
+  - improves progress visualization
+  More detailed analytics for instructors
 ## Screenshots
 Screenshots
   Screenshots of the application can be added here to show the main pages.
