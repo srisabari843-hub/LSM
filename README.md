@@ -226,6 +226,14 @@ Screenshots
   Author
     Developed as a learning project to build practical experience with python,Django,database,authentication, and web application development.
 
+## Known Limitations
+
+- Contact form:the Contact Form currently stores submitted queries in the database.Email notification and direct response are not implemented yet and may be added in a future version
+- Authentication FeedBack:Some Authentication error, such as an incorrect password,currently keeps the user on the same page without displaying a detailed error message may be added in future
+- Future Enhancement:Additional validation, notification,error handling, user experience improvements may be implemented in future versions.
+- It is my first django project after i learn it, so some mistakes may be possible, i will pick it in my future projects.
+
+
 
 
 
