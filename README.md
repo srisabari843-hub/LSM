@@ -34,13 +34,13 @@ Project Structure
   LMS_PROJECT/
   |
   |
-  |----accounts/
-  |      |--migrations/
-  |      |--templates/    
-  |      |--admin.py
-  |      |--models.py
-  |      |--urls.py
-  |      |--views.py
+  ├──accounts/
+  |      ├──migrations/
+  |      ├──templates/    
+  |      ├──admin.py
+  |      ├──models.py
+  |      ├──urls.py
+  |      ├──views.py
   |
   | 
   |-------courses/
